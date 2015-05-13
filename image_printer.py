@@ -8,22 +8,22 @@ square_size = 20
 def print_image(data):
     height = len(data)
     width = len(data[0])
-    img = Image.new('RGB', (height, width), "black")
+    img = Image.new('RGB', (width, height), "black")
     pixels = img.load()
-    for i in range(0, height, 1):
-        for j in range(0, width, 1):
-            pixels[j, i] = data[i][j]
+    for i in range(0, width, 1):
+        for j in range(0, height, 1):
+            pixels[j, i] = int(data[i][j])
     img.show()
 
 
 def print_grayscale_image(data):
     height = len(data)
     width = len(data[0])
-    img = Image.new('RGB', (height, width), "black")
+    img = Image.new('RGB', (width, height), "black")
     pixels = img.load()
     for i in range(0, height, 1):
         for j in range(0, width, 1):
-            pixels[i, j] = (data[i][j], data[i][j], data[i][j])
+            pixels[j, i] = (int(data[i][j]), int(data[i][j]), int(data[i][j]))
     img.show()
 
 

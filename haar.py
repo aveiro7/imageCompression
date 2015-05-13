@@ -26,4 +26,8 @@ def image_from_coefficients(red, green, blue):
 
 
 def image_from_coefficients_gray(data):
-    return pywt.idwt2(data, "haar")
+    result = pywt.idwt2(data, "haar")
+    for i in range(len(result)):
+        for j in range(len(result[i])):
+            result[i][j] = int(result[i][j])
+    return result
