@@ -27,6 +27,28 @@ def print_grayscale_image(data):
     img.show()
 
 
+def save_grayscale_image(data, name):
+    height = len(data)
+    width = len(data[0])
+    img = Image.new('RGB', (width, height), "black")
+    pixels = img.load()
+    for i in range(0, height, 1):
+        for j in range(0, width, 1):
+            pixels[j, i] = (int(data[i][j]), int(data[i][j]), int(data[i][j]))
+    img.save(name)
+
+
+def save_image(data, name):
+    height = len(data)
+    width = len(data[0])
+    img = Image.new('RGB', (width, height), "black")
+    pixels = img.load()
+    for i in range(0, width, 1):
+        for j in range(0, height, 1):
+            pixels[j, i] = int(data[i][j])
+    img.save(name)
+
+
 def generate_squares(data):
     result = []
     for i in range(len(data)):
