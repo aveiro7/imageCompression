@@ -73,4 +73,4 @@ class Colour:
     def generate_gray(value=0):
         if value == 0:
             value = random.randint(0, 255)
-        return value, value, value
+        return value
