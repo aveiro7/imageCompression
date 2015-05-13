@@ -11,7 +11,11 @@ def calculate_coefficients(data):
     return result_red, result_green, result_blue
 
 
-def image_from_coeffs(red, green, blue):
+def calculate_coefficients_gray(data):
+    return pywt.dwt2(data, "haar")
+
+
+def image_from_coefficients(red, green, blue):
 
     result_red = pywt.idwt2(red, "haar")
     result_green = pywt.idwt2(green, "haar")
@@ -19,3 +23,7 @@ def image_from_coeffs(red, green, blue):
 
     result = numbers_to_rgb2(result_red, result_green, result_blue)
     return result
+
+
+def image_from_coefficients_gray(data):
+    return pywt.idwt2(data, "haar")

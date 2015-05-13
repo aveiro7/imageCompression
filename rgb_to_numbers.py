@@ -49,6 +49,3 @@ def numbers_to_rgb2(red, green, blue):
             rgb = tuple([int(red[i][j]), int(green[i][j]), int(blue[i][j])])
             result[i].append(rgb)
     return result
-
-    return result
-
