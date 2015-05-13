@@ -14,7 +14,7 @@ def print_errors2(original, transformed):
 
 
 def calculate_error(rgb1, rgb2):
-    if type(rgb1) == int:
+    if type(rgb1) != list:
         return abs(rgb2 - rgb1)
 
     r_diff = rgb1[0] - rgb2[0]
