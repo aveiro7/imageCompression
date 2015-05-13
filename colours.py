@@ -1,3 +1,6 @@
+import random
+
+
 class Colour:
     light_coral = (240, 128, 128)
     salmon = (250, 128, 114)
@@ -11,3 +14,10 @@ class Colour:
     hot_pink = (255, 105, 180)
     deep_pink = (255, 105, 180)
     pale_violet_red = (219, 112, 147)
+
+
+    @staticmethod
+    def generate_gray(value=0):
+        if value == 0:
+            value = random.randint(0, 255)
+        return (value, value, value)

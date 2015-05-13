@@ -1,4 +1,5 @@
 from PIL import Image
+from colours import Colour as c
 
 
 square_size = 20
@@ -23,4 +24,13 @@ def generate_squares(data):
             for j in range(len(data[i])):
                 for k in range(square_size * j, square_size * j + square_size, 1):
                     result[l].append(data[i][j])
+    return result
+
+def generate_gray_squares(size):
+    result = [];
+    for i in range(0, size, 1):
+        result.append([])
+        for j in range(0, size, 1):
+            result[i].append(c.generate_gray())
+    # result = generate_squares(result)
     return result
