@@ -67,3 +67,11 @@ def generate_gray_squares(size):
         for j in range(0, size, 1):
             result[i].append(Colour.generate_gray())
     return result
+
+def generate_random_image(size):
+    result = []
+    for i in range(0, size, 1):
+        result.append([])
+        for j in range(0, size, 1):
+            result[i].append(Colour.generate_colour())
+    return result
