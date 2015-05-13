@@ -74,3 +74,8 @@ class Colour:
         if value == 0:
             value = random.randint(0, 255)
         return value
+
+    @staticmethod
+    def generate_colour():
+        value = random.randint(0, 255 * 2**16 + 255 * 2**8 + 255)
+        return value
